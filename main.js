@@ -24,4 +24,5 @@ faqs.forEach((faq) => {
     }
   });
 });
+
 // End Show / Hide Faq Answer

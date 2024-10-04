@@ -334,3 +334,60 @@ header {
   display: block;
 }
 /* =============== END FAQS =============== */
+
+/* =============== Start Testimonials =============== */
+.testimonials__container {
+  overflow-x: hidden;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.testimonial {
+  padding-top: 2rem;
+}
+.avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  border: 1rem solid var(--color-bg1);
+  object-fit: cover;
+}
+
+.testimonial__info {
+  text-align: center;
+}
+
+.testimonial__body {
+  position: relative;
+  background: var(--color-primary);
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.testimonial__body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1.5rem;
+  right: 50%;
+  transform: translateX(50%) rotate(45deg);
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(
+    135deg,
+    transparent,
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary)
+  );
+  t
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* =============== END Testimonials =============== */
