@@ -382,7 +382,6 @@ header {
     var(--color-primary),
     var(--color-primary)
   );
-  t
 }
 
 .swiper-slide {
@@ -391,3 +390,49 @@ header {
   justify-content: center;
 }
 /* =============== END Testimonials =============== */
+
+/* =============== START Footer =============== */
+footer {
+  background: var(--color-bg1);
+  padding-top: 5rem;
+  font-size: 0.9rem;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+}
+
+.footer__container > div h4 {
+  margin-bottom: 1.2rem;
+}
+
+.footer__1 p {
+  margin: 0 0 2rem;
+}
+
+.footer__2 ul li {
+  margin-bottom: 0.7rem;
+}
+
+.footer__2 ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 1rem;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.footer__copyright {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--color-bg2);
+}
+/* =============== END Footer =============== */
