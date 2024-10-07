@@ -26,3 +26,28 @@ faqs.forEach((faq) => {
 });
 
 // End Show / Hide Faq Answer
+
+// Start Show / Hide Nav menu
+const menu = document.querySelector(".nav__menu");
+const menuBtn = document.querySelector("#open_menu_btn");
+const closeBtn = document.querySelector("#close_menu_btn");
+
+// Start Show Nav menu
+menuBtn.addEventListener("click", () => {
+  menu.style.display = "block";
+  closeBtn.style.display = "inline-block";
+  menuBtn.style.display = "none";
+});
+// End Show  Nav menu
+
+// Start Hide Nav menu
+const closeNav = () => {
+  menu.style.display = "none";
+  closeBtn.style.display = "none";
+  menuBtn.style.display = "inline-block";
+};
+
+closeBtn.addEventListener("click", closeNav);
+// End Hide  Nav menu
+
+// End Show / Hide Nav menu
