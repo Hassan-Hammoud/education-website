@@ -30,6 +30,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("hn93Ab_nfeXiHbj4m"); // Replace with your EmailJS user ID
+      })();
+    </script>
   </head>
   <body>
     <!-- START Navbar  -->
@@ -110,24 +117,27 @@
           </ul>
         </aside>
 
-        <form class="contact__form">
+        <form class="contact__form" id="contact-form">
           <div class="form__name">
             <input
               type="text"
               name="First Name"
               placeholder="First Name"
+              id="fistName"
               required
             />
             <input
               type="text"
               name="Last Name"
               placeholder="Last Name"
+              id="lastName"
               required
             />
           </div>
           <input
             type="email"
             name="Email Address"
+            id="email"
             placeholder="Your Email Address"
             required
           />
@@ -137,8 +147,11 @@
             placeholder="Message"
             rows="7"
             required
+            id="message"
           ></textarea>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="submit" class="btn btn-primary" value="Send">
+            Send Message
+          </button>
         </form>
       </div>
     </div>
@@ -225,6 +238,33 @@
       </div>
     </footer>
     <!-- END FOOTER SECTION  -->
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Collect form data
+          var templateParams = {
+            firstName: document.getElementById("fistName").value,
+            lastName: document.getElementById("lastName").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value,
+          };
+
+          // Send email using EmailJS
+          emailjs
+            .send("service_o2tqrrp", "template_hv4lhwg", templateParams)
+            .then(
+              function (response) {
+                alert("Your message has been sent successfully!");
+              },
+              function (error) {
+                alert("Failed to send message. Please try again.");
+              }
+            );
+        });
+    </script>
     <script src="main.js"></script>
   </body>
 </html>
